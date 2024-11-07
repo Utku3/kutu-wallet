@@ -1,20 +1,29 @@
+from datetime import datetime
+
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
-from flask import render_template, url_for, request, redirect, flash, abort
-from dbmodels import Expense, db
+from flask import render_template, url_for, request, redirect
 
 app = Flask(__name__)
 app.config.from_object('config')
+
 db = SQLAlchemy(app)
+
+from dbmodels import Expense
+
+@app.route('/')
+def home():
+    return render_template('base.html')  # Create a home.html template or just return a simple string
 
 @app.route('/add', methods=['GET', 'POST'])
 def add_expense():
     if request.method == 'POST':
         amount = request.form['amount']
         category = request.form['category']
-        date = request.form['date']
+        date_str = request.form['date']
         description = request.form['description']
-        new_expense = Expense(amount, category, date, description)
+        date = datetime.strptime(date_str, '%Y-%m-%d').date()
+        new_expense = Expense(amount=amount, category=category, date=date, description=description)
         db.session.add(new_expense)
         db.session.commit()
         return redirect(url_for('view_expenses'))
@@ -43,3 +52,6 @@ def delete_expense(id):
     db.session.delete(expense)
     db.session.commit()
     return redirect(url_for('view_expenses'))
+
+if __name__ == '__main__':
+    app.run(debug=True)
