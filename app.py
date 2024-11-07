@@ -13,7 +13,7 @@ from dbmodels import Expense
 
 @app.route('/')
 def home():
-    return render_template('base.html')  # Create a home.html template or just return a simple string
+    return render_template('base.html')
 
 @app.route('/add', methods=['GET', 'POST'])
 def add_expense():
