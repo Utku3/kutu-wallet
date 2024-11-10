@@ -41,7 +41,7 @@ def edit_expense(id):
     if request.method == 'POST':
         expense.amount = request.form['amount']
         expense.category = request.form['category']
-        expense.date = request.form['date']
+        expense.date = datetime.strptime(request.form['date'], '%Y-%m-%d').date()
         expense.description = request.form['description']
         db.session.commit()
         return redirect(url_for('view_expenses'))
