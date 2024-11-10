@@ -11,6 +11,7 @@ db = SQLAlchemy(app)
 
 from dbmodels import Expense
 
+# Homepage route
 @app.route('/')
 def home():
     return render_template('base.html')
