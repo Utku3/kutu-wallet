@@ -2,17 +2,29 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kutu Wallet</title>
-    <link rel="stylesheet" href="/static/style.css">
+    <link rel="stylesheet" href="../static/style.css">
 </head>
 <body>
     <header>
-        <h1>Kutu Wallet</h1>
-        <nav>
-            <a href="{{ url_for('add_expense') }}">Add Expense</a>
-            <a href="{{ url_for('view_expenses') }}">View Expenses</a>
-        </nav>
+        <div class="container">
+            <h1>Kutu Wallet</h1>
+            <nav>
+                <ul>
+                    <li><a href="{{ url_for('add_expense') }}" class="nav-link">Add Expense</a></li>
+                    <li><a href="{{ url_for('view_expenses') }}" class="nav-link">View Expenses</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
-    {% block content %}{% endblock %}
+
+    <main class="container">
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Kutu Wallet</p>
+    </footer>
 </body>
 </html>
