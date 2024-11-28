@@ -1,0 +1,154 @@
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Apply a background and set a common font for the whole page */
+body {
+    font-family: 'Arial', sans-serif;
+    background-image: linear-gradient(to left, #efa635, #ff9155, #ff817b, #ff7aa2, #f57fc6, #d790e5, #b1a1f8, #86afff, #61c3ff, #54d3fb, #69e1ed, #8eebde);
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Main container for centering content */
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+/* Header styles */
+header {
+    background-color: #2d3b42;
+    color: white;
+    padding: 20px 0;
+}
+
+header h1 {
+    display: inline-block;
+    font-size: 2.5em;
+    margin-left: 20px;
+}
+
+nav ul {
+    list-style-type: none;
+    float: right;
+}
+
+nav ul li {
+    display: inline;
+    margin-left: 20px;
+}
+
+.nav-link {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2em;
+    padding: 5px 10px;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.nav-link:hover {
+    background-color: #5c6e7c;
+}
+
+/* Main content section */
+main {
+    margin-top: 30px;
+}
+
+/* Form styling */
+.expense-form label {
+    display: block;
+    margin-top: 10px;
+}
+
+.expense-form input,
+.expense-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.expense-form button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1em;
+    transition: background-color 0.3s;
+}
+
+.expense-form button:hover {
+    background-color: #45a049;
+}
+
+/* Table styling */
+.table-container {
+    margin-top: 30px;
+    overflow-x: auto;
+}
+
+.expenses-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.expenses-table th,
+.expenses-table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.expenses-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.expenses-table tr:hover {
+    background-color: #ddd;
+}
+
+.btn-action {
+    text-decoration: none;
+    color: #007BFF;
+    margin-right: 10px;
+    font-weight: bold;
+}
+
+.btn-action:hover {
+    text-decoration: underline;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #2d3b42;
+    color: white;
+    margin-top: 50px;
+}
+
+@media (max-width: 768px) {
+    nav ul {
+        float: none;
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    nav ul li {
+        display: block;
+        margin: 10px 0;
+    }
+
+    .container {
+        width: 90%;
+    }
+}
