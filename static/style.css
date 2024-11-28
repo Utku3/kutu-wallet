@@ -1,54 +1,59 @@
-/* Reset some default styles */
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Apply a background and set a common font for the whole page */
 body {
     font-family: 'Arial', sans-serif;
-    background-image: linear-gradient(to left, #efa635, #ff9155, #ff817b, #ff7aa2, #f57fc6, #d790e5, #b1a1f8, #86afff, #61c3ff, #54d3fb, #69e1ed, #8eebde);
-    color: #333;
+    background: rgb(0,36,25);
+    background: linear-gradient(90deg, rgba(0,36,25,1) 0%, rgba(38,150,85,1) 52%, rgba(18,217,203,1) 100%);
     line-height: 1.6;
 }
 
-/* Main container for centering content */
 .container {
     width: 80%;
     margin: 0 auto;
 }
 
-/* Header styles */
 header {
-    background-color: #2d3b42;
-    color: white;
-    padding: 20px 0;
+    position: relative;
+    height: 65px;
+    background-color:rgba(0, 0, 0, 0.4);
+    color: rgba(255,255,255, 0.9);
+    padding: 5px;
+    margin: 2px;
+    border:1px solid black;
 }
 
 header h1 {
     display: inline-block;
     font-size: 2.5em;
-    margin-left: 20px;
+    margin-left: 5px;
 }
 
 nav ul {
+    display: flex;
+    justify-content: center;
     list-style-type: none;
-    float: right;
+    padding: 0;
+    margin: 0;
 }
 
 nav ul li {
-    display: inline;
-    margin-left: 20px;
+    margin-left: 10px;
 }
 
 .nav-link {
-    color: white;
-    text-decoration: none;
-    font-size: 1.2em;
-    padding: 5px 10px;
-    border-radius: 4px;
-    transition: background-color 0.3s;
+    position: relative;
+    height: 65px;
+    background-color:rgba(0, 0, 0, 0.4);
+    color: rgba(255,255,255, 0.9);
+    padding: 5px;
+    margin: 2px;
+
+    border:1px solid white;
 }
 
 .nav-link:hover {
@@ -60,7 +65,7 @@ main {
     margin-top: 30px;
 }
 
-/* Form styling */
+
 .expense-form label {
     display: block;
     margin-top: 10px;
